@@ -5,6 +5,7 @@ import Heading from "../ui/Heading";
 import { useUser } from "./../features/authentication/useUser";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../ui/Spinner";
 const LoginLayout = styled.main`
   min-height: 100vh;
   display: grid;
