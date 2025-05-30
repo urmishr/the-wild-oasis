@@ -56,7 +56,6 @@ const NoActivity = styled.div`
 function TodayActivity() {
   const { todayActivity, isPending } = useTodayActivity();
 
-  console.log(todayActivity);
   return (
     <StyledToday>
       <Row type="horizontal">
