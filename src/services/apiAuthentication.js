@@ -31,17 +31,22 @@ export async function login({ email, password }) {
 }
 
 export async function getUserSession() {
-  const { data: session } = await supabase.auth.getSession();
+  const { data, error } = await supabase.auth.getSession();
 
-  if (!session.session) {
-    console.error("error retriving user session ");
+  if (error) {
+    console.error("Error retrieving user session:", error);
     return null;
   }
 
-  const { data, error } = await supabase.auth.getUser();
-  if (error) throw new Error(error.message);
+  if (!data.session) {
+    console.error("No active user session found");
+    return null;
+  }
 
-  return data?.user;
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  if (userError) throw new Error(userError.message);
+
+  return userData?.user;
 }
 
 export async function logout() {

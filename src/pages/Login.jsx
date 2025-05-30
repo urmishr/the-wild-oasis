@@ -17,12 +17,12 @@ const LoginLayout = styled.main`
 `;
 
 function Login() {
-  const { isAuthenticated, fetchStatus, isPending } = useUser();
+  const { isAuthenticated, fetchStatus, isLoading } = useUser();
   const navigate = useNavigate();
   useEffect(() => {
-    if ((isAuthenticated, fetchStatus !== "fetching", !isPending))
-      navigate("/");
-  }, [isAuthenticated, fetchStatus, isPending, navigate]);
+    if (!isAuthenticated && !isLoading && fetchStatus !== "fetching")
+      navigate("/login");
+  }, [isAuthenticated, navigate, isLoading, fetchStatus]);
   return (
     <LoginLayout>
       <Logo />

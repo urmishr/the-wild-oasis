@@ -4,7 +4,7 @@ import { getUserSession } from "../../services/apiAuthentication";
 export function useUser() {
   const {
     data: user,
-    isPending,
+    isLoading,
     fetchStatus,
   } = useQuery({
     queryKey: ["user"],
@@ -13,7 +13,7 @@ export function useUser() {
 
   return {
     user,
-    isPending,
+    isLoading,
     isAuthenticated: user?.role === "authenticated",
     fetchStatus,
   };
