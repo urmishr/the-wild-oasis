@@ -8,6 +8,7 @@
 - Tanstack Query
 - React Hook Form
 - date-fns
+- styled componant
 
 #### Back-end
 
