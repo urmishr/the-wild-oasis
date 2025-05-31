@@ -1,7 +1,7 @@
 # The Wild Oasis
 
 ### Booking managment App
-Internal tool to manager bookings, cabins (rooms) , user etc.
+Internal tool to manage bookings, cabins (rooms) , users etc.
 
 #### Front-end
 
